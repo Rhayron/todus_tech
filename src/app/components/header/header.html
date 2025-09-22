@@ -1,0 +1,59 @@
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="#" class="logo">
+          <img src="/todus_tech_png.png" alt="TodusTech" class="logo-image">
+          <span class="logo-text">
+            <span class="logo-todus">todus</span>
+            <span class="logo-tech">tech</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="navbar-menu" [class.is-active]="isMenuOpen">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown" (mouseenter)="toggleDropdown('sobre', true)" (mouseleave)="toggleDropdown('sobre', false)">
+            <a href="#" class="nav-link">Sobre <i class="dropdown-icon">▼</i></a>
+            <ul class="dropdown-menu" [class.show]="dropdownStates['sobre']">
+              <li><a href="#" class="dropdown-link">Quem Somos</a></li>
+              <li><a href="#" class="dropdown-link">Nossa História</a></li>
+              <li><a href="#" class="dropdown-link">Equipe</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown" (mouseenter)="toggleDropdown('servicos', true)" (mouseleave)="toggleDropdown('servicos', false)">
+            <a href="#" class="nav-link">Serviços <i class="dropdown-icon">▼</i></a>
+            <ul class="dropdown-menu" [class.show]="dropdownStates['servicos']">
+              <li><a href="#" class="dropdown-link">Desenvolvimento de Software</a></li>
+              <li><a href="#" class="dropdown-link">Consultoria em TI</a></li>
+              <li><a href="#" class="dropdown-link">Soluções em Nuvem</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">Cases</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">Blog</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contato</a>
+          </li>
+        </ul>
+
+        <button class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="isDarkTheme ? 'Alternar para tema claro' : 'Alternar para tema escuro'">
+          <span class="theme-icon">{{ isDarkTheme ? '☀️' : '🌙' }}</span>
+        </button>
+      </div>
+
+      <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,14 @@
+.main-content {
+  padding-top: 80px; /* Account for fixed header */
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper spacing for fixed header */
+body {
+  margin: 0;
+  padding: 0;
+}

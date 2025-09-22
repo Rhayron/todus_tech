@@ -1,0 +1,277 @@
+/* Global Styles for TodusTech Clone */
+
+/* CSS Custom Properties (Variables) - TodusTech Palette */
+:root {
+  --primary-blue: #1E3B82;
+  --primary-green: #A3D977;
+  --accent-cyan: #00BCD4;
+  --accent-red: #C62828;
+  --dark-gray: #2C3E50;
+  --light-bg: #F8F9FA;
+  --black: #212529;
+  --white: #ffffff;
+  --text-gray: #6C757D;
+  --border-light: #DEE2E6;
+}
+
+/* Light Theme Variables */
+.light-theme {
+  --bg-primary: #ffffff;
+  --bg-secondary: #F8F9FA;
+  --text-primary: #212529;
+  --text-secondary: #6C757D;
+  --border-color: #DEE2E6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+}
+
+/* Dark Theme Variables */
+.dark-theme {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --border-color: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --card-bg: #2d2d2d;
+  --light-bg: #2d2d2d;
+  --white: #2d2d2d;
+  --black: #ffffff;
+  --text-gray: #b0b0b0;
+  --border-light: #404040;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Button Styles */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-green);
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+/* Dark theme button adjustments */
+.dark-theme .btn-outline {
+  color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.dark-theme .btn-outline:hover {
+  background-color: var(--primary-green);
+  color: var(--primary-blue);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary-blue);
+}
+
+.text-accent {
+  color: var(--primary-green);
+}
+
+.bg-light {
+  background-color: var(--light-bg);
+}
+
+.bg-dark {
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+.py-section {
+  padding: 80px 0;
+}
+
+.py-lg {
+  padding: 60px 0;
+}
+
+.py-md {
+  padding: 40px 0;
+}
+
+.mb-lg {
+  margin-bottom: 3rem;
+}
+
+.mb-md {
+  margin-bottom: 2rem;
+}
+
+/* Responsive Grid */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.col-md-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding: 0 15px;
+}
+
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+}
+
+.col-md-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .col-md-4,
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .py-section {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Card Styles */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+/* Icon Styles */
+.icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+}
